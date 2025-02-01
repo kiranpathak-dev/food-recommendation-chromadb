@@ -23,7 +23,7 @@ The system leverages:
 Ensure you have **Python 3.x** installed and install the required dependencies using:
 
 ```bash
-pip install transformers sentence-transformers chromadb torch
+pip install transformers sentence-transformers chromadb torch PyPDF2
 ```
 
 ---
@@ -121,19 +121,36 @@ python foodRecommendationSystem.py
 ✅ **Sentence Transformers (`all-MiniLM-L6-v2`)** – For text embedding generation.  
 ✅ **ChromaDB** – For **efficient similarity search** using **cosine similarity**.  
 ✅ **Python** – For implementing the recommendation system.  
+✅ **PyPDF2** – For extracting text from PDF recipe files.  
 
 ---
 
+## **Part 2: Smart Recipe Recommendation System**
 
-  ## **Next Steps**
-- **Personalized User Experience**
-By classifying user queries into different categories, you could create a more personalized experience for the user. This would allow you to suggest not just similar food items, but diet-specific meals that align with the user’s preferences.
-How This Helps:
-User Profiles: Over time, you can store user preferences (e.g., vegan, vegetarian) and combine them with classification results for dynamic personalization of recommendations.
-Contextual Awareness: The system will be aware of user preferences and will adapt the recommendations to offer only those food items that fit within those preferences.
+This section extends the food recommendation system by extracting ingredients from **recipe PDFs** and recommending the most similar recipes based on **ingredient embeddings**.
 
-- **Improved Search Efficiency**
-If you know that the user’s query falls under a particular dietary category, you could optimize the search to only look for food items within that category. This reduces the number of embeddings to compare and can improve the efficiency of the search.
-How This Helps:
-Faster Searches: When you classify the query, you can pre-select a subset of the database that matches the category, which leads to faster searches by reducing the amount of data the system needs to process.
+### **📌 Additional Features**
+🔹 Extracts text from **PDF recipe files** using `PyPDF2`.  
+🔹 Uses **regular expressions** to extract ingredient lists.  
+🔹 Generates **ingredient-based embeddings** for comparison.  
+🔹 Stores recipe embeddings in **ChromaDB** for efficient search.  
+🔹 Retrieves the **top 5 most similar recipes** based on ingredient similarity.  
+
+### **🛠 How to Run Smart Recommendation System**
+1️⃣ Ensure all dependencies are installed.  
+2️⃣ Run the script:
+
+```bash
+python smartRecommendationSystem.py
+```
+
+3️⃣ Provide the path to a recipe PDF when prompted.  
+4️⃣ The system will extract ingredients and recommend the **top 5 most similar recipes**.
+
+---
+
+## **🔮 Next Steps**
+- **Personalized User Experience** by storing user preferences.
+- **Improved Search Efficiency** by filtering results based on dietary category.
+- **Support for Multi-Modal Data** (e.g., food images in addition to text).
 
