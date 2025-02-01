@@ -1,6 +1,6 @@
 # Food Recommendation System with Similarity Search using ChromaDB
 
-This project is a food recommendation system that uses Natural Language Processing (NLP) and vector similarity search to suggest food items based on a user's query. The system leverages **ChromaDB** for vector storage, **SentenceTransformer** for generating text embeddings, and (optionally) **zero-shot classification using BART MNLI** for dietary categorization.
+This project is a food recommendation system that uses Natural Language Processing (NLP) and vector similarity search to suggest food items based on a user's query. The system leverages **ChromaDB** for vector storage, **SentenceTransformer** for generating text embeddings, and **zero-shot classification using BART MNLI** for dietary categorization.
 
 ## Project Overview
 
